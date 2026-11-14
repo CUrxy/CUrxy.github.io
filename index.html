@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>[Your Name] | Mechanical Engineering</title>
-<meta name="description" content="I am a mechanical engineering student at The Cooper Union. I like fast, stiff, and light.">
+<meta name="description" content="Mechanical engineering student at The Cooper Union. Race cars, wing research, and things built in the machine shop.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@
   .intro { max-width:36rem; margin:1.25rem 0 0; font-size:1.2rem; color:var(--muted); }
 
   .project { padding:1.5rem 0 2.5rem; }
-  .strip { display:grid; grid-template-columns:1fr auto auto; background:var(--sheet); border:1.5px solid var(--ink); margin-bottom:.75rem; }
+  .strip { display:grid; grid-template-columns:1fr auto; background:var(--sheet); border:1.5px solid var(--ink); margin-bottom:.75rem; }
   .strip > * { padding:.55rem .9rem; border-right:1.5px solid var(--ink); }
   .strip > *:last-child { border-right:0; }
   .strip h2 { margin:0; font-size:1.2rem; font-weight:700; line-height:1.3; }
@@ -53,8 +53,9 @@
 
   @media (max-width:44rem) {
     .shots { grid-template-columns:repeat(2,1fr); }
-    .strip { grid-template-columns:1fr 1fr; }
-    .strip h2 { grid-column:1 / -1; border-right:0; border-bottom:1.5px solid var(--ink); }
+    .strip { grid-template-columns:1fr; }
+    .strip > * { border-right:0; }
+    .strip h2 { border-bottom:1.5px solid var(--ink); }
     .strip div { white-space:normal; }
     .shot.main { aspect-ratio:4/3; }
   }
@@ -108,42 +109,42 @@
    Missing files show a dashed box naming the file to add.
 ---------------------------------------------------------------- */
 const projects = [
-  { title: "Cooper Union Motorsports (Formula SAE)", role: "Chief Engineer", dates: "2025 to present",
-    blurb: "Leading the team back to competition after four years without a new car. Chassis stiffness, suspension, and manufacturing.",
+  { title: "Cooper Union Motorsports (Formula SAE)", dates: "2025 to present",
+    blurb: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     images: [
       ["images/formula-sae-car.jpg", "The Formula SAE car"],
       ["images/formula-sae-chassis.jpg", "Chassis and shear panels"],
       ["images/formula-sae-ansys.jpg", "Ansys torsional stiffness model"],
       ["images/formula-sae-team.jpg", "The team"]
     ] },
-  { title: "Dragonfly Flight Research", role: "Researcher", dates: "2025 to present",
-    blurb: "Aerodynamics study using a tow tank I designed to test wing configurations.",
+  { title: "Dragonfly Flight Research", dates: "2025 to present",
+    blurb: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     images: [
       ["images/dragonfly-tow-tank.jpg", "Tow tank test rig"],
       ["images/dragonfly-wing.jpg", "Adjustable wing mount"],
       ["images/dragonfly-data.jpg", "Test data"]
     ] },
-  { title: "Audi S6 Performance Build", role: "Builder", dates: "[Year] to present",
-    blurb: "Data logging, tuning, and a redesigned charge air cooling system.",
+  { title: "Audi S6 Performance Build", dates: "[Year] to present",
+    blurb: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     images: [
       ["images/s6-car.jpg", "The Audi S6"],
       ["images/s6-cooling.jpg", "Replumbed charge air cooling system"],
       ["images/s6-logs.jpg", "Data logs"]
     ] },
-  { title: "FPV Drones", role: "Builder and pilot", dates: "2023 to present",
-    blurb: "Custom builds, with PID and filter tuning from Blackbox gyro logs.",
+  { title: "FPV Drones", dates: "2023 to present",
+    blurb: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     images: [
       ["images/fpv-drone.jpg", "FPV drone build"],
       ["images/fpv-blackbox.jpg", "Blackbox log"]
     ] },
-  { title: "Fast 3D Printer", role: "Builder", dates: "2020 to present",
-    blurb: "A high-speed printer tuned with resonance analysis and input shaping.",
+  { title: "Fast 3D Printer", dates: "2020 to present",
+    blurb: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     images: [
       ["images/printer.jpg", "The printer"],
       ["images/printer-resonance.jpg", "Resonance measurement"]
     ] },
-  { title: "Machine Shop", role: "Manufacturing Lead", dates: "2025 to 2026",
-    blurb: "Powertrain, brake, and pedal box parts machined on manual mills and lathes.",
+  { title: "Machine Shop", dates: "2025 to 2026",
+    blurb: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     images: [
       ["images/machining-1.jpg", "Machining a part"],
       ["images/machining-2.jpg", "Finished components"]
@@ -154,9 +155,8 @@ const work = document.getElementById("work");
 projects.forEach((p, pi) => {
   const sec = document.createElement("section");
   sec.className = "project";
-  sec.innerHTML = '<div class="strip"><h2></h2><div><small>Role</small><span class="r"></span></div><div><small>Dates</small><span class="d"></span></div></div><p class="blurb"></p><div class="shots"></div>';
+  sec.innerHTML = '<div class="strip"><h2></h2><div><small>Dates</small><span class="d"></span></div></div><p class="blurb"></p><div class="shots"></div>';
   sec.querySelector("h2").textContent = p.title;
-  sec.querySelector(".r").textContent = p.role;
   sec.querySelector(".d").textContent = p.dates;
   sec.querySelector(".blurb").textContent = p.blurb;
   const shots = sec.querySelector(".shots");
