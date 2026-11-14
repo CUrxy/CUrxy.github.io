@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[Your Name] | Mechanical Engineering Portfolio</title>
+<meta name="description" content="Mechanical engineering student at The Cooper Union. Structures, aerodynamics, and manufacturing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #eef1f4;
+    --sheet: #f8f9fb;
+    --ink: #14202e;
+    --muted: #4f5d6d;
+    --line: #14202e;
+    --grid: #cfd8e2;
+    --accent: #1f4e9c;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: var(--ink);
+    background-color: var(--paper);
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 32px 32px;
+    background-position: -1px -1px;
+  }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  .wrap { max-width: 56rem; margin: 0 auto; padding: 0 1.25rem; }
+
+  /* Hero */
+  header { padding: 5rem 0 3rem; }
+  h1 {
+    margin: 0;
+    font-stretch: 62%;
+    font-weight: 800;
+    font-size: clamp(3.5rem, 13vw, 8.5rem);
+    line-height: 0.92;
+    letter-spacing: -0.01em;
+  }
+  .dim {
+    display: flex; align-items: center; gap: 0.75rem;
+    margin: 1.25rem 0 1.5rem;
+    color: var(--muted); font-size: 0.95rem;
+  }
+  .dim::before, .dim::after { content: ""; height: 1px; background: var(--ink); flex: 1; }
+  .dim::before { max-width: 3rem; }
+  .lede { max-width: 38rem; font-size: 1.25rem; margin: 0 0 1.75rem; }
+  .links { display: flex; flex-wrap: wrap; gap: 0.75rem; padding: 0; margin: 0; list-style: none; }
+  .links a {
+    display: inline-block; padding: 0.55rem 1rem;
+    border: 1.5px solid var(--ink); background: var(--sheet);
+    color: var(--ink); text-decoration: none; font-weight: 600;
+  }
+  .links a:hover { background: var(--ink); color: var(--sheet); }
+  .links a.primary { background: var(--ink); color: var(--sheet); }
+  .links a.primary:hover { background: var(--accent); border-color: var(--accent); }
+
+  /* Sections */
+  section { padding: 2.25rem 0; }
+  h2 { font-size: 1.75rem; margin: 0 0 1.25rem; font-weight: 700; font-stretch: 85%; }
+
+  /* Title-block entries: header cells hold the facts, body holds the work */
+  .entry { background: var(--sheet); border: 1.5px solid var(--line); margin-bottom: 1.5rem; }
+  .tb { display: grid; grid-template-columns: 2fr 1.2fr 1fr; border-bottom: 1.5px solid var(--line); }
+  .tb > div { padding: 0.6rem 0.9rem; border-right: 1.5px solid var(--line); }
+  .tb > div:last-child { border-right: 0; }
+  .tb .name { font-weight: 700; font-size: 1.15rem; line-height: 1.3; grid-column: 1 / -1; border-right: 0; border-bottom: 1.5px solid var(--line); }
+  .tb small { display: block; color: var(--muted); font-size: 0.8rem; line-height: 1.3; }
+  .tb span { font-weight: 600; }
+  .body { padding: 0.9rem 1.1rem 1rem; }
+  .body h3 { margin: 0.9rem 0 0.2rem; font-size: 1rem; font-weight: 700; }
+  .body h3:first-child { margin-top: 0; }
+  .body h3 small { font-weight: 400; color: var(--muted); }
+  .body ul { margin: 0.35rem 0 0.4rem; padding-left: 1.2rem; }
+  .body li { margin-bottom: 0.35rem; max-width: 46rem; }
+
+  .more { padding: 0.9rem 1.1rem; background: var(--sheet); border: 1.5px solid var(--line); }
+  .more p { margin: 0 0 0.6rem; }
+  .more p:last-child { margin: 0; }
+
+  dl.skills { background: var(--sheet); border: 1.5px solid var(--line); margin: 0; }
+  dl.skills > div { display: grid; grid-template-columns: 9rem 1fr; border-bottom: 1.5px solid var(--line); }
+  dl.skills > div:last-child { border-bottom: 0; }
+  dl.skills dt { padding: 0.7rem 0.9rem; font-weight: 700; border-right: 1.5px solid var(--line); }
+  dl.skills dd { margin: 0; padding: 0.7rem 0.9rem; }
+
+  footer { padding: 2.5rem 0 4rem; color: var(--muted); font-size: 0.95rem; }
+
+  @media (max-width: 40rem) {
+    header { padding-top: 3rem; }
+    .tb { grid-template-columns: 1fr; }
+    .tb > div { border-right: 0; border-bottom: 1.5px solid var(--line); }
+    .tb > div:last-child { border-bottom: 0; }
+    dl.skills > div { grid-template-columns: 1fr; }
+    dl.skills dt { border-right: 0; padding-bottom: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>[Your Name]</h1>
+    <div class="dim">Mechanical engineering, The Cooper Union, B.S. expected May 2028</div>
+    <p class="lede">I design, analyze, and machine things that have to be stiff, light, and fast. Right now that means leading a Formula SAE team back to competition, and studying wing aerodynamics in a tow tank.</p>
+    <ul class="links">
+      <li><a class="primary" href="resume.pdf">Download resume</a></li>
+      <li><a href="mailto:[your-email]">Email me</a></li>
+      <li><a href="[your-linkedin-url]">LinkedIn</a></li>
+      <li><a href="[your-github-url]">GitHub</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <article class="entry">
+      <div class="tb">
+        <div class="name">Cooper Union Motorsports (Formula SAE)</div>
+        <div><small>Role</small><span>Chief Engineer</span></div>
+        <div><small>Dates</small><span>Sep 2026 to present</span></div>
+        <div><small>Location</small><span>New York, NY</span></div>
+      </div>
+      <div class="body">
+        <ul>
+          <li>Leading the team back to competition after four years without a new car, with more than 15 recruited members and [N] subsystem teams.</li>
+          <li>Defining the vehicle concept across suspension, chassis, powertrain, shifters, intake, exhaust, and driver controls.</li>
+          <li>Modeling chassis torsional stiffness in Ansys and designing shear panels that raised stiffness [from X to Y Nm/deg] with [N kg] added.</li>
+          <li>Using MATLAB to optimize suspension design for drivability and rules compliance.</li>
+        </ul>
+        <h3>Manufacturing Lead <small>Sep 2025 to Aug 2026</small></h3>
+        <ul>
+          <li>Planned manufacturing for vehicle components, set machining priorities against assembly deadlines, and reviewed parts for machinability, tolerances, and material selection.</li>
+          <li>Machined powertrain, brake, and pedal box components on manual mills, lathes, and other processes.</li>
+          <li>Reverse engineered legacy and missing parts in Siemens NX and SolidWorks to produce CAD models and drawings.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="tb">
+        <div class="name">Dragonfly Flight Research</div>
+        <div><small>Role</small><span>Researcher</span></div>
+        <div><small>Dates</small><span>Jan 2025 to present</span></div>
+        <div><small>Location</small><span>New York, NY</span></div>
+      </div>
+      <div class="body">
+        <ul>
+          <li>Defined objectives and key flight data for an aerodynamics study, and ran fluid dynamics calculations to size the test setup.</li>
+          <li>Designed a tow tank system to test [N] wing configurations, with adjustable wing positioning mechanisms and selected sensors.</li>
+          <li>[Add any result, even preliminary, such as a measured lift or drag trend.]</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <article class="entry">
+      <div class="tb">
+        <div class="name">Audi S6 Performance Build</div>
+        <div><small>Role</small><span>Builder</span></div>
+        <div><small>Dates</small><span>[Year] to present</span></div>
+        <div><small>Type</small><span>Personal project</span></div>
+      </div>
+      <div class="body">
+        <ul>
+          <li>Logged [intake air temperature, boost, and pressures] to find [heat soak or pressure drop] limits in the factory charge air cooling system.</li>
+          <li>Redesigned and replumbed the charge air cooling system, reducing intake air temperatures by [X] degrees F.</li>
+          <li>Calibrated the engine tune from logged data to [result].</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="tb">
+        <div class="name">FPV Drones</div>
+        <div><small>Role</small><span>Builder and pilot</span></div>
+        <div><small>Dates</small><span>2023 to present</span></div>
+        <div><small>Type</small><span>Personal project</span></div>
+      </div>
+      <div class="body">
+        <ul>
+          <li>Tune rate PID and filter settings from Blackbox gyro logs to [reduce propwash oscillation and improve tracking].</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="tb">
+        <div class="name">Fast 3D Printer</div>
+        <div><small>Role</small><span>Builder</span></div>
+        <div><small>Dates</small><span>2020 to present</span></div>
+        <div><small>Type</small><span>Personal project</span></div>
+      </div>
+      <div class="body">
+        <ul>
+          <li>Built and modified an open-source high-speed printer design, sourced the parts, and developed the firmware.</li>
+          <li>Ran resonance frequency analysis and input shaper tuning to raise print speed from [X] to [Y] mm/s with better stability and accuracy.</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <section id="also">
+    <h2>Also</h2>
+    <div class="more">
+      <p><strong>Seawolf Technologies, Syosset, NY.</strong> Software engineering and network operations intern, summer 2025. Developed, tested, and improved Linux software for VoIP business operations.</p>
+      <p><strong>Stony Brook School Robotics.</strong> Coach, August 2025 to May 2026. Guided the team from robot design through competition, and taught 3D printing, CNC and manual machining, and shop safety.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <dl class="skills">
+      <div><dt>Technical</dt><dd>C, MATLAB, Siemens NX, SolidWorks, Fusion 360, Onshape, ANSYS (Workbench, APDL), KiCad, GD&amp;T</dd></div>
+      <div><dt>Hands-on</dt><dd>Manual lathe and mill, CNC machining, soldering and rework</dd></div>
+      <div><dt>Languages</dt><dd>English (native), Mandarin (fluent, spoken)</dd></div>
+    </dl>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>I am looking for a Summer 2027 aerospace engineering internship. The fastest way to reach me is <a href="mailto:[your-email]">[your-email]</a>.</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">&copy; 2026 [Your Name]</div>
+</footer>
+
+</body>
+</html>
